@@ -43,10 +43,8 @@ public class DiscordEcho
     {
         try
         {
-            //read the bot's token from a file name "token" in the main directory
-            FileReader fr = new FileReader("shark_token");
-            BufferedReader br = new BufferedReader(fr);
-            String token = br.readLine();
+            //read the bot's token from environment config var
+            String token = System.getenv("BOT_TOKEN");
 
             //create bot instance
             JDA api = new JDABuilder(AccountType.BOT)
